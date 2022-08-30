@@ -31,6 +31,8 @@ const OneInvoice = ({ todo, toggleComplete, deleteTodo }) => {
     setCarItemsArrays(arr);
   }, [cartItems]);
 
+  console.log("cartItemsArrays", cartItemsArrays);
+
   const subtotal = cartItemsArrays.reduce((a, c) => a + c.price * c.qty, 0);
   const totalItems = cartItemsArrays.reduce((a, c) => a + c.qty, 0);
 

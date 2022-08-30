@@ -94,6 +94,8 @@ const Basket = (props) => {
 
       date: serverTimestamp(),
       dateMyPC: timeInMyPC,
+      totalPrice: totalPrice,
+      totalItems: totalItems,
     });
   };
   return (
