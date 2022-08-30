@@ -23,7 +23,7 @@
 }
 
 .App-header {
-  min-height: 100vh;
+  min-height: calc(100vh - 24px);
   display: flex;
   align-items: center;
   font-size: calc(10px + 2vmin);

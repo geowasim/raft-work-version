@@ -43,6 +43,9 @@ function Dialog({
           ("<span>ريال</span> "{totalPrice})
         </h1>
         <div style={{ display: "flex", alignItems: "center" }}>
+          <button onClick={() => setHideQuestionShowPay(false)} className="no">
+            لا - الرجوع للقائمة السابقة{" "}
+          </button>
           <button
             onClick={() => {
               setHideQuestionShowPay(false);
@@ -54,9 +57,6 @@ function Dialog({
             className="yes"
           >
             نعم - اطبع الفاتورة
-          </button>
-          <button onClick={() => setHideQuestionShowPay(false)} className="no">
-            لا - الرجوع للقائمة السابقة{" "}
           </button>
         </div>
       </div>

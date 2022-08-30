@@ -5,6 +5,7 @@ import Main from "../Main";
 import "./Pos.css";
 const Pos = () => {
   const { user, logout } = UserAuth();
+
   const navigate = useNavigate();
 
   const handleLogout = async () => {

@@ -100,6 +100,17 @@ const Basket = (props) => {
     <div className="basketContainer">
       <div className="basket">
         <h2 className="basketName">السلة</h2>
+        {cartItems.length !== 0 && (
+          <button
+            className="cancelOrder"
+            onClick={() => {
+              resetCartItems();
+              handleIsPrint();
+            }}
+          >
+            إلغاء الطلب
+          </button>
+        )}
         <div className="basketName">
           {cartItems.length === 0 && (
             <div>
@@ -107,25 +118,26 @@ const Basket = (props) => {
             </div>
           )}
         </div>
-        {cartItems.map((item) => (
-          <div key={item.id} className="row">
-            <div className="basketTitle">{item.description}</div>
-            <div className="basketIND">
-              <button onClick={() => onAdd(item)} className="itemButton add">
-                +
-              </button>
-              <button
-                onClick={() => onRemove(item)}
-                className="itemButton remove"
-              >
-                -
-              </button>
+        {cartItems.length !== 0 &&
+          cartItems.map((item) => (
+            <div key={item.id} className="row">
+              <div className="basketTitle">{item.description}</div>
+              <div className="basketIND">
+                <button onClick={() => onAdd(item)} className="itemButton add">
+                  +
+                </button>
+                <button
+                  onClick={() => onRemove(item)}
+                  className="itemButton remove"
+                >
+                  -
+                </button>
+              </div>
+              <div className="basketQT">
+                {item.qty} X {Number(item.price) * 0.15 + Number(item.price)}
+              </div>
             </div>
-            <div className="basketQT">
-              {item.qty} X {Number(item.price) * 0.15 + Number(item.price)}
-            </div>
-          </div>
-        ))}
+          ))}
         {cartItems.length !== 0 && (
           <>
             <div
@@ -204,16 +216,6 @@ const Basket = (props) => {
                   >
                     {" "}
                     طباعة الفاتورة
-                  </button>
-                  <button
-                    onClick={() => {
-                      resetCartItems();
-                      handleIsPrint();
-                    }}
-                    className="itemButton"
-                  >
-                    {" "}
-                    إلغاء الطلب{" "}
                   </button>
                 </div>
               )}
