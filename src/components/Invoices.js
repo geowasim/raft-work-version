@@ -58,7 +58,7 @@ function Invoices() {
     <div className={`${style.bg} invoices`}>
       <div className={style.container}>
         <h3 className={style.heading}>Invoices</h3>
-        <p>Total Income is : {total}</p>
+        <p>Total Income is : {total.toFixed(2)}</p>
         <div className="myOneInvoice customers">
           <p>Order#</p>
           <p>Total</p>
