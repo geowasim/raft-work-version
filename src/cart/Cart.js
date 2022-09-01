@@ -34,6 +34,17 @@ const Basket = (props) => {
   // const bagPrice = itemsPrice > 300 ? 0 : 7;
   const totalPrice = taxPrice + itemsPrice;
 
+  function handlePriceForCash(totalPrice, method) {
+    if (method === "Cash") {
+      totalPrice = Math.round(totalPrice);
+    }
+    return totalPrice;
+  }
+
+  useEffect(() => {
+    handlePriceForCash();
+  }, [totalPrice]);
+
   const componentRef = useRef();
   const handleReactToPrint = useReactToPrint({
     content: () => componentRef.current,
@@ -102,7 +113,8 @@ const Basket = (props) => {
     <div className="basketContainer">
       <div className="basket">
         <h2 className="basketName">السلة</h2>
-        {cartItems.length !== 0 && (
+        <p style={{ color: "red" }}>{handlePriceForCash(totalPrice, method)}</p>
+        {/* {cartItems.length !== 0 && (
           <button
             className="cancelOrder"
             onClick={() => {
@@ -112,7 +124,7 @@ const Basket = (props) => {
           >
             إلغاء الطلب
           </button>
-        )}
+        )} */}
         <div className="basketName">
           {cartItems.length === 0 && (
             <div>

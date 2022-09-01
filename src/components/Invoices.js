@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore";
 
 import "./OneInvoice.css";
+import TestNewCollection from "./testcollection";
 
 const style = {
   bg: `h-screen w-screen p-4 `,
@@ -53,12 +54,15 @@ function Invoices() {
   };
 
   const total = todos.reduce((a, c) => a + c.totalPrice, 0);
-
+  const soldItems = todos.reduce((a, c) => a + c.totalItems, 0);
   return (
     <div className={`${style.bg} invoices`}>
       <div className={style.container}>
         <h3 className={style.heading}>Invoices</h3>
-        <p>Total Income is : {total.toFixed(2)}</p>
+        <div className="totalInfo">
+          <p>Total Income : {total.toFixed(2)}</p>
+          <p>Total sold items : {soldItems}</p>
+        </div>
         <div className="myOneInvoice customers">
           <p>Order#</p>
           <p>Total</p>
@@ -85,6 +89,7 @@ function Invoices() {
         )}
       </div>
       {/* <div>{todos.forEach((x) => console.log(x))}</div> */}
+      {/* <TestNewCollection /> */}
     </div>
   );
 }

@@ -38,7 +38,8 @@ function Dialog({
           fontFamily: "'El Messiri','sans-serif'",
         }}
       >
-        <h3 style={{ fontSize: "24px" }}>هل تم استلام مبلغ </h3>
+        <h3 style={{ fontSize: "24px" }}>(مدى-Mada ) الدفع بطاقة </h3>
+        <h4> هل تم استلام مبلغ</h4>
         <h1 style={{ color: "#0000aa", fontSize: "24px", margin: "15px 0" }}>
           ("<span>ريال</span> "{totalPrice})
         </h1>

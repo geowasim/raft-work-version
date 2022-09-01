@@ -1,6 +1,7 @@
 import React from "react";
 import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./payments.css";
 
 export default function Mada(props) {
   const count = props.itemsPrice;

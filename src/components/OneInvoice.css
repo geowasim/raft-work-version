@@ -31,5 +31,12 @@
 
 .invoices {
   background-color: #4f4f4f;
-  height: calc(100vh - 25px);
+  height: auto;
+}
+
+.totalInfo {
+  display: flex;
+}
+.totalInfo p {
+  flex: 1;
 }
