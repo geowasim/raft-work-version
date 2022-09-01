@@ -113,7 +113,7 @@ const Basket = (props) => {
     <div className="basketContainer">
       <div className="basket">
         <h2 className="basketName">السلة</h2>
-        <p style={{ color: "red" }}>{handlePriceForCash(totalPrice, method)}</p>
+        {/* <p style={{ color: "red" }}>{handlePriceForCash(totalPrice, method)}</p> */}
         {/* {cartItems.length !== 0 && (
           <button
             className="cancelOrder"
